@@ -6,7 +6,7 @@
 #    By: mmoya <mmoya@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 17:06:46 by mmoya             #+#    #+#              #
-#    Updated: 2017/11/17 16:12:53 by mmoya            ###   ########.fr        #
+#    Updated: 2018/01/24 18:24:36 by mmoya       ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ ft_strncmp.c ft_strncpy.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strstr.c \
 ft_tolower.c ft_toupper.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
 ft_strtrim.c ft_strsplit.c ft_lstnew.c ft_lstiter.c ft_lstadd.c ft_lstmap.c \
 ft_lstdel.c ft_lstdelone.c ft_isblank.c ft_isupper.c ft_islower.c \
-ft_strndup.c ft_swap.c ft_print2dstr.c ft_sqrt.c ft_countdigit.c
+ft_strndup.c ft_swap.c ft_print2dstr.c ft_sqrt.c ft_countdigit.c ft_ltoa.c
 
 OBJ = $(SRC:.c=.o)
 
