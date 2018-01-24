@@ -6,7 +6,7 @@
 /*   By: mmoya <marvin@le-101.fr>                   +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:22:11 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/24 18:22:11 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/01/24 18:28:46 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -113,5 +113,6 @@ void				ft_swap(void *a, void *b, size_t size);
 int					ft_sqrt(int nb);
 int					ft_countdigit(long n);
 void				*ft_memrchr(const void *dst, int c, size_t n);
+char				*ft_ltoa(long n);
 
 #endif
