@@ -6,7 +6,7 @@
 /*   By: mmoya <marvin@le-101.fr>                   +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:18:08 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/24 18:18:09 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/01/26 23:24:07 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,14 +15,7 @@
 
 void	ft_putstr(char const *str)
 {
-	int i;
-
-	i = 0;
 	if (str == NULL)
 		return ;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	write(1, str, ft_strlen(str));
 }
