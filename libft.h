@@ -17,6 +17,14 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define BUFF_SIZE 32
+
+typedef struct		s_fd_l
+{
+	int				fd;
+	char			*content;
+	struct s_fd_l	*next;
+}					t_fd_list;
 
 typedef struct		s_list
 {
@@ -108,6 +116,7 @@ int					ft_islower(int c);
 int					ft_isspace(int c);
 int					ft_isupper(int c);
 char				*ft_strndup(const char *s1, size_t n);
+char				*ft_strrealloc(char *str, char *to_append);
 void				ft_print2dstr(char **str);
 void				ft_swap(void *a, void *b, size_t size);
 int					ft_sqrt(int nb);
