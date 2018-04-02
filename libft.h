@@ -6,7 +6,7 @@
 /*   By: mmoya <mmoya@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:22:11 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/02/15 21:14:53 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/02 15:22:46 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -126,5 +126,7 @@ char				*ft_ltoa(long n);
 int					get_next_line(const int fd, char **line);
 void				ft_putll(long long l);
 char				*ft_lltoa(off_t l);
+char				*ft_straddchar(char *str, char c, size_t off);
+char				*ft_strrmchar(char *str, size_t off, int rev);
 
 #endif
