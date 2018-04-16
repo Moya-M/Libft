@@ -6,7 +6,7 @@
 /*   By: mmoya <mmoya@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:22:11 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/04/02 15:22:46 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/04/16 18:20:34 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -111,6 +111,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** MORE **
 */
 
+void				ft_lstpush(t_list **alst, t_list *new);
 int					ft_isblank(int c);
 int					ft_islower(int c);
 int					ft_isspace(int c);
