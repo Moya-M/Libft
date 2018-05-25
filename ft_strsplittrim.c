@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strsplit.c                                    .::    .:/ .      .::   */
+/*   ft_strsplittrim.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mmoya <mmoya@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:20:54 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/25 16:55:58 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/05/25 16:56:01 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,7 @@ static int	ft_countwords(char const *s, char c)
 
 	i = 0;
 	len = 0;
-	while (s[i] == c)
+	while (s[i] == c || s[i] == ' ' || s[i] == '\t')
 		i++;
 	while (s[i])
 	{
@@ -41,12 +41,12 @@ static void	ft_freetabs(char **tab, int k)
 	free(tab);
 }
 
-static int	ft_countletters(char const *s, char c, int i)
+static int	ft_countletters(char const *s, int i, char c)
 {
 	int j;
 
 	j = 0;
-	while (s[i] != c && s[i] != '\0')
+	while (s[i] != ' ' && s[i] != '\t' && s[i] != c && s[i] != '\0')
 	{
 		i++;
 		j++;
@@ -54,7 +54,7 @@ static int	ft_countletters(char const *s, char c, int i)
 	return (j);
 }
 
-static char	**ft_split(char const *s, char c, char **tab, int i)
+static char	**ft_split(char const *s, char **tab, int i, char c)
 {
 	int j;
 	int k;
@@ -65,14 +65,14 @@ static char	**ft_split(char const *s, char c, char **tab, int i)
 	cpt = 0;
 	while (s[i] && k < ft_countwords(s, c))
 	{
-		while (s[i] == c)
+		while (s[i] == ' ' || s[i] == '\t' || s[i] == c)
 			i++;
-		if (!(tab[k] = malloc(sizeof(char) * (ft_countletters(s, c, i) + 1))))
+		if (!(tab[k] = malloc(sizeof(char) * (ft_countletters(s, i, c) + 1))))
 		{
 			ft_freetabs(tab, k);
 			return (NULL);
 		}
-		cpt = i + ft_countletters(s, c, i);
+		cpt = i + ft_countletters(s, i, c);
 		while (i < cpt)
 			tab[k][j++] = s[i++];
 		tab[k][j] = '\0';
@@ -83,7 +83,7 @@ static char	**ft_split(char const *s, char c, char **tab, int i)
 	return (tab);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char		**ft_strsplittrim(char const *s, char c)
 {
 	int		i;
 	char	**tab;
@@ -93,5 +93,5 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	if (!(tab = malloc(sizeof(char*) * (ft_countwords(s, c) + 1))))
 		return (NULL);
-	return (ft_split(s, c, tab, i));
+	return (ft_split(s, tab, i, c));
 }
