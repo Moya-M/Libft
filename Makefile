@@ -6,14 +6,15 @@
 #    By: mmoya <mmoya@student.le-101.fr>            +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2017/11/09 17:06:46 by mmoya        #+#   ##    ##    #+#        #
-#    Updated: 2018/05/25 17:05:06 by mmoya       ###    #+. /#+    ###.fr      #
+#    Updated: 2018/09/28 19:44:54 by mmoya       ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
-
 NAME = libft.a
 
 HEAD = libft.h
+
+FLAG = -Wall -Wextra -Werror
 
 SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_isspace.c ft_itoa.c ft_memalloc.c ft_memccpy.c \
@@ -27,31 +28,23 @@ ft_tolower.c ft_toupper.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
 ft_strtrim.c ft_strsplit.c ft_lstnew.c ft_lstiter.c ft_lstadd.c ft_lstmap.c \
 ft_lstdel.c ft_lstdelone.c ft_isblank.c ft_isupper.c ft_islower.c \
 ft_strndup.c ft_swap.c ft_print2dstr.c ft_sqrt.c ft_countdigit.c ft_ltoa.c \
-ft_strrealloc.c ft_putll.c ft_lltoa.c get_next_line.c ft_straddchar.c \
-ft_strrmchar.c ft_lstpush.c ft_strsplittrim.c
+ft_strrealloc.c ft_strsplittrim.c ft_strsplittrimq.c get_next_line.c \
+ft_strsplitq.c
 
 OBJ = $(SRC:.c=.o)
-
-BOX = "\033[1;42m┃┃\033[0m"
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEAD) Makefile
-	@ar rcs $(NAME) $(OBJ)
-	@echo "\033[1;42m┃┖─────────────────────────────┐\033[0m"
-	@echo "\033[1;42m┃          libft DONE          │\033[0m"
-	@echo "\033[1;42m┖──────────────────────────────┘\033[0m"
+	ar rcs $(NAME) $(OBJ)
 
 %.o: $(SRCS)%.c
-	@gcc -Wall -Wextra -Werror -c $*.c
-	@echo $(BOX) "\033[1mCompiled :	\033[34m\"$*\"\033[0m"
+	gcc $(FLAG) -c $*.c
 
 clean:
-	@rm -f $(OBJ)
-	@echo $(BOX) "\033[1mRemoved :	\033[31m\"*.o\"\033[0m"
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo $(BOX) "\033[1mRemoved :	\033[31m$(NAME)\033[0m"
+	rm -f $(NAME)
 
 re: fclean all

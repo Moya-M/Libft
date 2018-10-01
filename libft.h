@@ -6,7 +6,7 @@
 /*   By: mmoya <mmoya@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:22:11 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/05/25 17:03:38 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/18 17:39:56 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -111,7 +111,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** MORE **
 */
 
-void				ft_lstpush(t_list **alst, t_list *new);
 int					ft_isblank(int c);
 int					ft_islower(int c);
 int					ft_isspace(int c);
@@ -124,11 +123,9 @@ int					ft_sqrt(int nb);
 int					ft_countdigit(long n);
 void				*ft_memrchr(const void *dst, int c, size_t n);
 char				*ft_ltoa(long n);
+char				**ft_strsplitq(const char *s);
 char				**ft_strsplittrim(char const *s, char c);
+char				**ft_strsplittrimq(char const *s, char c);
 int					get_next_line(const int fd, char **line);
-void				ft_putll(long long l);
-char				*ft_lltoa(off_t l);
-char				*ft_straddchar(char *str, char c, size_t off);
-char				*ft_strrmchar(char *str, size_t off, int rev);
 
 #endif

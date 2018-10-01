@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strsplittrim.c                                .::    .:/ .      .::   */
+/*   ft_strsplittrimq.c                               .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: mmoya <mmoya@student.le-101.fr>            +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/24 18:20:54 by mmoya        #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/22 17:08:43 by mmoya       ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/09/18 16:50:51 by mmoya       ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,18 +17,23 @@
 static int	ft_countwords(char const *s, char c)
 {
 	int i;
+	int	j;
 	int len;
 
 	i = 0;
 	len = 0;
 	while (s[i])
 	{
+		j = 0;
 		while (s[i] == c || s[i] == ' ' || s[i] == '\t')
 			i++;
 		if (s[i] != c && s[i] != ' ' && s[i] != '\t' && s[i] != '\0')
 			len++;
 		while (s[i] != c && s[i] != ' ' && s[i] != '\t' && s[i] != '\0')
+		{
 			i++;
+			j++;
+		}
 	}
 	return (len);
 }
@@ -85,7 +90,7 @@ static char	**ft_split(char const *s, char **tab, int i, char c)
 	return (tab);
 }
 
-char		**ft_strsplittrim(char const *s, char c)
+char		**ft_strsplittrimq(char const *s, char c)
 {
 	int		i;
 	char	**tab;
